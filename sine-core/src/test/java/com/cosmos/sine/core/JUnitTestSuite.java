@@ -1,5 +1,6 @@
 package com.cosmos.sine.core;
 
+import com.cosmos.sine.core.utils.ClassUtilsTest;
 import com.cosmos.sine.core.utils.PackageScannerTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -11,7 +12,8 @@ import org.junit.runners.Suite;
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-        PackageScannerTest.class
+        PackageScannerTest.class,
+        ClassUtilsTest.class
 })
 public class JUnitTestSuite {
 }

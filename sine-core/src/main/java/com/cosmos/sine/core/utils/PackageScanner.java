@@ -60,22 +60,23 @@ public class PackageScanner {
     /**
      * Load class using specified class loader.
      *
-     * @param loader class loader
+     * @param loader    class loader
      * @param classPath class path string
      * @return class
      * @throws ClassNotFoundException class not found exception
      */
     private Class<?> loadClass(ClassLoader loader, String classPath) throws ClassNotFoundException {
         classPath = classPath.substring(0, classPath.length() - CLASS_SUFFIX.length());
+        // Class.forName() will initialize a object, but loadClass() does not.
         return loader.loadClass(classPath);
     }
 
     /**
      * Scan class from file system.
      *
-     * @param loader class loader
-     * @param classes classes container
-     * @param dir package specified directory
+     * @param loader      class loader
+     * @param classes     classes container
+     * @param dir         package specified directory
      * @param packageName package name
      * @throws ClassNotFoundException class not found exception
      */
@@ -95,8 +96,8 @@ public class PackageScanner {
     /**
      * Scan class from jar file.
      *
-     * @param loader class loader
-     * @param classes class container
+     * @param loader   class loader
+     * @param classes  class container
      * @param fullPath jar file path
      * @throws ClassNotFoundException class not found exception
      */
